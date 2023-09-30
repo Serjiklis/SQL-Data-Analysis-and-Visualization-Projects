@@ -67,4 +67,3 @@ WHERE LastName IS NOT NULL;
 SELECT *
 FROM EmployeeDemographics
 WHERE FirstName IN ('Tom', 'Pam', 'Toby');
-
