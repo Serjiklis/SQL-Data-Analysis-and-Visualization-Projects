@@ -12,7 +12,7 @@ A series of projects and tasks where I practice my skills in working with a MySQ
 
 # Projects & Challenges
 
-## [Data Analyst Bootcamp](Data Analyst Bootcamp)
+## [Data Analyst Bootcamp](https://www.youtube.com/watch?v=rGx1QNdYzvs&list=PLUaB-1hjhk8FE_XZ87vPPSfHqb6OcM0cF&index=2)
 The goal of this project is to develop proficiency in working with MySQL, starting from the beginner level and progressively advancing through intermediate and advanced stages.
 
 + Beginner Level: At the beginner level, we will focus on laying a strong foundation in MySQL. This includes mastering the fundamental concepts of Structured Query Language (SQL), creating databases and tables, and performing essential CRUD (Create, Read, Update, Delete) operations.
