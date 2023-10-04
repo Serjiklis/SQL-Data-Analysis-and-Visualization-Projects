@@ -46,4 +46,4 @@ DELETE FROM table_name;
 Please ensure you have appropriate backup mechanisms in place before using `UPDATE` or `DELETE` statements, especially in a production database environment, to prevent data loss. 
 Test your queries thoroughly in a safe environment before applying them to critical data.
 
-### [Code examples](https://github.com/Serjiklis/SQL-Data-Analysis-and-Visualization-Projects/blob/main/Boot%20Camp/update_and_delete_data.sql)
+**[Code examples](https://github.com/Serjiklis/SQL-Data-Analysis-and-Visualization-Projects/blob/main/Boot%20Camp/update_and_delete_data.sql)**
