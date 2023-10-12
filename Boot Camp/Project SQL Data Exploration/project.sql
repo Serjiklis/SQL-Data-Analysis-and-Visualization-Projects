@@ -1,21 +1,3 @@
-
-
-/*
-UPDATE CovidVactinations
-SET new_vaccinations = NULL
-WHERE new_vaccinations = '';
-
-ALTER TABLE CovidDeaths
-    MODIFY COLUMN new_deaths INT;
-
-*/
-/*
--- Check error in data
-SELECT location, date, total_cases, new_cases, total_deaths, population
-FROM CovidDeaths
-LIMIT 1 OFFSET 11451;
-*/
-
 -- Select Data that we are going to be using
 
 SELECT location, date, total_cases, new_cases, total_deaths, population
@@ -118,9 +100,9 @@ Select *, (RollingPeopleVaccinated/Population)*100
 From PercentPopulationVaccinated
 where continent is not null and new_vaccinations  is not null;
 
--- Creating View to store data for later visualizations
+-- Creating Views to store data for later visualizations
 
-Create View PercentPopulationVaccinated as
+Create View PercentPopulationVaccinated AS
 Select CD.continent, CD.location, CD.date, CD.population,  CV.new_vaccinations
      , SUM(CD.new_vaccinations) OVER (Partition by CD.Location Order by CD.location, CD.Date) as RollingPeopleVaccinated
 From CovidDeaths CD
@@ -129,10 +111,18 @@ Join CovidVactinations CV
 	and CD.date = CV.date
 where CD.continent is not null;
 
+CREATE VIEW GlobalNumbers AS
+Select SUM(new_cases) as total_cases, SUM(new_deaths) as total_deaths, SUM(new_deaths)/SUM(New_Cases)*100 as DeathPercentage
+From CovidDeaths
+where continent is not null
+order by 1,2;
 
+CREATE VIEW TotalDeathsContinent AS
+SELECT continent, max(total_deaths)
+FROM CovidDeaths
+    WHERE continent IS NOT NULL
+    GROUP BY continent;
 
-SELECT *
-FROM PercentPopulationVaccinated
 
 
 
